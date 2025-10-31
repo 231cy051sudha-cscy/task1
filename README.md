@@ -1,19 +1,19 @@
 # task1
 1. install nmap
 command
-# first want to update 
+ first want to update 
 sudo apt update
 #if already installed 
 sudo --version
-# If not installed, install it
+ If not installed, install it
 sudo apt install nmap -y
-# after installation 
+ after installation 
 
 2. Find your local IP range
  ip addr show - to find ip range
 
 3. Run: nmap -sS  10.0.2.0/24 to perform TCP SYN scan
-# Perform TCP SYN scan on your local network
+ Perform TCP SYN scan on your local network
 sudo nmap -sS 10.0.2.0/24
 * sudo - Administrative privileges required for SYN scans
 * nmap - The scanning tool
@@ -45,6 +45,14 @@ ii. -p tells nmap which ports to scan. The comma-separated list means “scan on
 3306 — MySQL / MariaDB server.
 5357 — Web Services for Devices (WSD) / HTTP-based device services (sometimes used for printer discovery).
 16992 — Intel AMT (Active Management Technology) web interface (commonly used for out-of-band management).
+sudo nmap -sS -sC -p 21,80,135,443,445,1521,3306,5357,16992 10.0.2.2
+iii. -sC  Run default NSE scripts (Nmap Scripting Engine). This runs a curated set of scripts considered useful and reasonably safe. They perform common checks such as:
+banner grabbing and basic service probes,
+simple vulnerability/info checks (e.g., HTTP title, SSL certificate info),
+probing for common misconfigurations (SMB, HTTP, DNS, etc.),
+performing safe enumerations (like HTTP methods, basic headers).
+5.Identify potential security risks from open ports
+through the open port what are the risk i attached in screenshots.
    
    
 
